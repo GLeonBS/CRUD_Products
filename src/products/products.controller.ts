@@ -39,6 +39,20 @@ export class ProductController {
 
         return res.status(200).json(product)
     }
+
+    async writeProducts(req: Request, res: Response) {
+        const products = await new ProductService().writeProducts()
+        
+
+        return res.status(200).json(products)
+    }
+
+    async readProducts(req: Request, res: Response) {
+        const products = await new ProductService().readProducts()
+        
+
+        return res.status(200).json(products)
+    }
 }
 
 export default new ProductController()
