@@ -10,5 +10,6 @@ routes.get('/product/:id', productController.find)
 routes.put('/product/:id', productController.update)
 routes.delete('/product/:id', productController.delete)
 routes.post('/stock', stockController.create)
+routes.post('/randomizeItems', productController.randomizeItems)
 
 export default routes

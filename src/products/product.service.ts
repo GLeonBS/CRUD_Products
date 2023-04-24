@@ -37,4 +37,10 @@ export class ProductService {
         await ProductModel.findOneAndDelete({_id: id})
         return
     }
+
+    async randomize() {
+        const items = await ProductModel.aggregate([{$sample: {size: 4}}])
+
+        return items
+    }
 }

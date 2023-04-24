@@ -32,6 +32,13 @@ export class ProductController {
 
         return res.status(200).json("Sucessfuly deleted product!!")
     }
+
+    async randomizeItems(req: Request, res: Response) {
+        const product = await new ProductService().randomize()
+        
+
+        return res.status(200).json(product)
+    }
 }
 
 export default new ProductController()
